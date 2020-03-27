@@ -2,22 +2,9 @@ const express = require('express');
 
 const app = express();
 
-/**
- * Rota / Recurso
- */
+app.post('/users/:id', (request, response) => {
 
-/**
- * Metodos HTTP:
- * 
- * GET:    Buscar uma informação do back-end.
- * POST:   Criar uma informação no back-end.
- * PUT:    Alterar uma informação no back-end.
- * DELETE: Deletar uma informação no backend.
- */
-
-app.get('/users', (request, response) => {
-
-    const params = request.query;
+    const params = request.params;
 
     console.log(params);
 
@@ -29,3 +16,5 @@ app.get('/users', (request, response) => {
 });
 
 app.listen(3333);
+
+console.log('Server running on https://localhost:3333...');
