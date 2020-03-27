@@ -1,10 +1,8 @@
 const express = require('express');
 
-const app = express();
+const routes = express.Router();
 
-app.use(express.json());
-
-app.post('/users/:id', (request, response) => {
+routes.post('/users/:id', (request, response) => {
 
     const params = request.body;
 
@@ -17,6 +15,4 @@ app.post('/users/:id', (request, response) => {
     });
 });
 
-app.listen(3333);
-
-console.log('Server running on https://localhost:3333...');
+module.exports = routes;
